@@ -1,20 +1,20 @@
 #include <stdio.h>
 
 /**
- * main - Lanzador.
- *
- * Return: Always 0 (Success)
- */
-
+* main - Print the alphabet in lowercase letters, except for e and q
+*
+* Return: Always 0 (Success)
+*/
 int main(void)
 {
-	char alp[52] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	int i;
+		char letter;
 
-	for (i = 0; i <= 52; i++)
-	{
-		putchar(alp[i]);
-	}
-	putchar('\n');
+		for (letter = 'a'; letter <= 'z'; letter++)
+		{
+		if (letter != 'e' && letter != 'q')
+		putchar(letter);
+		}
+		putchar('\n');
+
 	return (0);
 }
