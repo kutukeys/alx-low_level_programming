@@ -7,22 +7,23 @@
  */
 int main(void)
 {
-	int a = '0';
+	int tens;
+	int ones;
 
-	while (a <= '9')
+	for (tens = 0; tens <= 9; tens++)
 	{
-		putchar(a);
-		if (a == '9')
+		for (ones = tens + 1; ones <= 9; ones++)
 		{
-			putchar('\n');
-			return (0);
-		}
-		else
-		{
-			putchar(',');
-			putchar(' ');
-			a++;
+			putchar(tens + '0');
+			putchar(ones + '0');
+
+		 	if (tens < 8)
+		 	{
+		 		putchar(',');
+			 	putchar(' ');
+		 	}
 		}
 	}
+	putchar('\n');
 	return (0);
 }
