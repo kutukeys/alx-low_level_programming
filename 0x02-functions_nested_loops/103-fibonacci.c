@@ -1,45 +1,31 @@
 #include <stdio.h>
+
 /**
-  * main - print the first 98 fibonacci numbers.
-  * Return: Nothing.
-  */
+ * main - finds and prints the sum of the even-valued terms
+ * followed by a new line
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-	int count;
-	unsigned long i, j, k;
-	unsigned long m, n, p, carry;
+	int i;
+	unsigned long int j, k, next, sum;
 
-	count = 0;
-	i = 0;
 	j = 1;
-	for (count = 1; count <= 91; count++)
+	k = 2;
+	sum = 0;
+
+	for (i = 1; i <= 33; ++i)
 	{
-		k = i + j;
-		i = j;
+		if (j < 4000000 && (j % 2) == 0)
+		{
+			sum = sum + j;
+		}
+		next = j + k;
 		j = k;
-		printf("%lu, ", k);
+		k = next;
 	}
-	m = i % 1000;
-	i = i / 1000;
-	n = j % 1000;
-	j = j / 1000;
-	while (count <= 98)
-	{
-		carry = (m + n) / 1000;
-		p = (m + n) - carry * 1000;
-		k = (i + j) + carry;
-		m = n;
-		n = p;
-		i = j;
-		j = k;
-		if (p >= 100)
-			printf("%lu%lu", k, p);
-		else
-			printf("%lu0%lu", k, p);
-		if (count != 98)
-			printf(", ");
-		count++;
-	}
-	putchar('\n');
+
+	printf("%lu\n", sum);
+
 	return (0);
 }
