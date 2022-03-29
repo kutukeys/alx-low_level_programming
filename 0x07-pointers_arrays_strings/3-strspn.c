@@ -1,28 +1,37 @@
 #include "main.h"
 
 /**
- * _strspn()- gets the length of a prefix
- * @s: string
- * @accept: accepts
- * Return: number of bytes in s
+ * _strspn - Gets the length of a prefix substring.
+ * @s: The string to be searched.
+ * @accept: The prefix to be measured.
+ *
+ * Return: The number of bytes in s which
+ * consist only of bytes from accept.
  */
 
 unsigned int _strspn(char *s, char *accept)
 {
-		unsigned int c = 0;
-	char *t = accept;
+unsigned int count = 0;
+int ai;
 
-	while (*s++)
-	{
-		while (*accept++)
-			if (*(s - 1) == *(accept - 1))
-			{
-				c++;
-				break;
-			}
-		if (!(*--accept))
-			break;
-		accept = t;
-	}
-	return (c);
+while (*s)
+{
+for (ai = 0; accept[ai]; ai++)
+{
+if (accept[ai] == *s)
+{
+count++;
+break;
+}
+else if (accept[ai + 1] == '\0')
+{
+return (count);
+}
+}
+
+s++;
+}
+
+return (count);
+
 }

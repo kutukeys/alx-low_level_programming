@@ -1,1 +1,1 @@
-this is my first readme in this folder
+Learning Even more pointers, arrays and strings
