@@ -2,8 +2,8 @@
 
 /**
  * _pow_recursion()- function that returns the value of x raised to power of y
- * @x: argue1
- * @Y: argue2
+ * @x: base
+ * @y: expponent
  * Return: recursion
  */
 
@@ -17,5 +17,5 @@ int _pow_recursion(int x, int y)
 	{
 		return (0);
 	}
-	return (x * _pow_recursion(x, y - 1))
+	return (x * _pow_recursion(x, y - 1));
 }
