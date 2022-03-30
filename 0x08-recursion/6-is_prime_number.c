@@ -1,31 +1,44 @@
 #include "main.h"
 
+int tmp_prime(int n, int i);
+
 /**
- * is_prime_number()- check if n is a prime number
- * @n: int
- * Return: 0 or 1
+ * divisors - number is prime?
+ * @n: integer params
+ * @m: integer params
+ * Return: boolean
  */
 
-
-int is_prime_number(int n)
+int divisors(int n, int m)
 {
-return (is_prime(n, 2));
+	if (m % n == 0)
+	{
+		return (0);
+	}
+	else if (m / 2 > n)
+	{
+		return (divisors(n + 2, m));
+	}
+	else
+	{
+		return (1);
+	}
 }
 
 /**
- * is_prime - check for prime
- * @n: int
- * @test: int
- * Return: int
+ * is_prime_number - prime
+ * @n: integer params
+ * Return: recursion
  */
 
-int is_prime(int n, int test)
+int is_prime_number(int n)
 {
-
-if (test >= n && n > 1)
-	return (1);
-else if (n % test == 0 || n <= 1)
-	return (0);
-else
-	return (is_prime(n, test + 1));
+	if ((!(n % 2) && n != 2) || n < 2)
+	{
+		return (0);
+	}
+	else
+	{
+		return (divisors(3, n));
+	}
 }
