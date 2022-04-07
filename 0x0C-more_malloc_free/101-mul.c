@@ -43,7 +43,7 @@ resp *= 10;
 resp += (s[i] - 48);
 }
 
-return (sign * resp);
+return (sign *resp);
 }
 
 /**
@@ -81,7 +81,7 @@ int main(int argc, char const *argv[])
 
 if (argc != 3)
 {
-_puts(Error );
+_puts(Error);
 exit(98);
 }
 print_int(_atoi(argv[1]) * _atoi(argv[2]));
