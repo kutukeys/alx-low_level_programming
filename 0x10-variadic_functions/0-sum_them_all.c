@@ -5,6 +5,7 @@
  * sum_them_all - a functionthat sums all its parameters
  * @n: argument passed
  * @...: ellipsis passed in argument
+ *
  * Return: 0 if n == 0 && sum all
  */
 
